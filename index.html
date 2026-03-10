@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amritsar Tourism - Explore the Jewel of Punjab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="letter-a.png" type="image/x-icon">
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #5d80d1;
+            --secondary: #5d80d1;
+            --accent: #5d80d1;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: brown;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #45d48d;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), #919090), url('https://i.pinimg.com/736x/ae/5e/88/ae5e884232ea7f4c57db6aaef2e7e9a2.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: whitesmoke;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45d48d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Places Section */
+        .places {
+            background-color: white;
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .place-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #mrsm {
+
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+
+        .place-info {
+            padding: 1.5rem;
+        }
+
+        .place-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .place-info p {
+            color: #666;
+            margin-bottom: 1rem;
+
+            overflow: hidden;
+        }
+
+        .place-info .btn {
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            transform: translateY(-50px);
+            transition: all 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal-body {
+            margin-top: 1rem;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Guides Section */
+        .guides {
+            background-color: #f9f9f9;
+        }
+
+        .guides-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .guide-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .guide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .guide-card:hover .guide-img img {
+            transform: scale(1.1);
+        }
+
+        .guide-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .guide-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .guide-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .guide-contact {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Foods Section */
+        .foods {
+            background-color: white;
+        }
+
+        .foods-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .food-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .food-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .food-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .food-card:hover .food-img img {
+            transform: scale(1.1);
+        }
+
+        .food-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .food-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .food-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* shopping Section */
+        .shopping {
+            background-color: white;
+        }
+
+        .shopping-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .shopping-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .shopping-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .shopping-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .shopping-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .shopping-card:hover .shopping-img img {
+            transform: scale(1.1);
+        }
+
+        .shopping-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .shopping-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .shopping-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--accent);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+
+                    <span>Amritsar Tourism</span>
+                </div>
+
+                <button class="mobile-menu-btn">
+                    ☰
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Famous Places</a></li>
+                    <li><a href="#guides">Tourist Guides</a></li>
+                    <li><a href="#foods">Famous Foods</a></li>
+                    <li><a href="#shopping">Shopping</a></li>
+                    <li><a href="#contact">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Spirit of Amritsar</h1>
+            <p>Explore the rich heritage, spirituality, and flavors of Punjab's cultural capital</p>
+            <a href="#places" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="section places" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Famous Places</h2>
+            </div>
+
+            <div class="places-container">
+                <!-- Golden Temple -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img
+                            src="https://media.istockphoto.com/id/535570117/photo/golden-temple-in-amritsar-punjab-india.jpg?s=612x612&w=0&k=20&c=TAgZK64Qz6YsljOK1rXZrrW1u1YSlb9e_YBEmm2pfBw=">
+                    </div>
+                    <div class="place-info">
+                        <h3>Golden Temple (Harimandar Sahib)</h3>
+                        <p>The holiest Gurudwara of Sikhism, known for its stunning golden architecture and the sacred
+                            Amrit Sarovar surrounding it.</p>
+                        <button class="btn learn-more" data-place="golden-temple">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Jallianwala Bagh -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://punjabtourism.punjab.gov.in/destination/jallian-wala-bagh-1.avif">
+                    </div>
+                    <div class="place-info">
+                        <h3>Jallianwala Bagh</h3>
+                        <p>A historic public garden that serves as a memorial to those killed in the 1919 Jallianwala
+                            Bagh massacre.</p>
+                        <button class="btn learn-more" data-place="jallianwala-bagh">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Wagah Border -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://punjabtourism.punjab.gov.in/destination/destibnation-amritsar-19.jpg">
+                    </div>
+                    <div class="place-info">
+                        <h3>Wagah Border</h3>
+                        <p>The only road border crossing between India and Pakistan, famous for its daily flag lowering
+                            ceremony.</p>
+                        <button class="btn learn-more" data-place="wagah-border">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Durgiana Temple -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://punjabtourism.punjab.gov.in/destination/durgaina-temple-1.jpg">
+                    </div>
+                    <div class="place-info">
+                        <h3>Durgiana Temple</h3>
+                        <p>A famous Hindu temple dedicated to Goddess Durga, resembling the architecture of the Golden
+                            Temple.</p>
+                        <button class="btn learn-more" data-place="durgiana-temple">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Gobindgarh Fort -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://punjabtourism.punjab.gov.in/destination/destibnation-amritsar-1.jpg">
+                    </div>
+                    <div class="place-info">
+                        <h3>Gobindgarh Fort</h3>
+                        <p>A historic military fort that showcases the martial history of Punjab through various
+                            exhibits and shows.</p>
+                        <button class="btn learn-more" data-place="gobindgarh-fort">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Ram Tirath -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img
+                            src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/08/27833bcb18127641f08d8f302765d433_1000x1000.jpg">
+                    </div>
+                    <div class="place-info">
+                        <h3>Ram Tirath</h3>
+                        <p>An ancient temple complex believed to be the ashram of Rishi Balmiki where Sita gave birth to
+                            Luv and Kush.</p>
+                        <button class="btn learn-more" data-place="ram-tirath">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Maharaja Ranjit Singh Museum -->
+                <div class="place-card" id="mrsm">
+                    <div class="place-img">
+                        <img
+                            src="https://punjabtourism.punjab.gov.in/museums/maharaja-ranjit-singh-memorial-ludhiana/maharaja-ranjit-singh-memorial-ludhiana-1.jpg">
+                    </div>
+                    <div class="place-info">
+                        <h3>Maharaja Ranjit Singh Museum</h3>
+                        <p>Houses objects connected to Maharaja Ranjit Singh, including arms and armor, paintings and
+                            coins from the Sikh period.</p>
+                        <button class="btn learn-more" data-place="ranjit-singh-museum">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Section -->
+    <section class="section guides" id="guides">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tourist Guides</h2>
+            </div>
+
+            <div class="guides-container">
+                <!-- Guide 1 -->
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img
+                            src="https://thumbs.dreamstime.com/b/portrait-young-sikh-man-beard-turban-portrait-young-sikh-man-head-guy-beard-turban-313408438.jpg">
+                    </div>
+                    <div class="guide-info">
+                        <h3>Harpreet Singh</h3>
+                        <p>15 years of experience showing visitors the best of Amritsar</p>
+                        <p>Male | English, Hindi, Punjabi</p>
+                        <span class="guide-contact">Contact: +91-XXXXXXXX23</span>
+                    </div>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img src="https://fadcdn.s3.ap-south-1.amazonaws.com/media/641/Lead_Avatar_Girl.jpg">
+                    </div>
+                    <div class="guide-info">
+                        <h3>Seerat Kaur</h3>
+                        <p>Expert in culinary and cultural tours of old Amritsar</p>
+                        <p>Female | English, French, Punjabi</p>
+                        <span class="guide-contact">Contact: +91-XXXXXXXX34</span>
+                    </div>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img
+                            src="https://t3.ftcdn.net/jpg/14/58/74/90/360_F_1458749070_BKhrLH0jMpy0gjZwWO4xJ51NIHNdbDVC.jpg">
+                    </div>
+                    <div class="guide-info">
+                        <h3>Aman Mahajan</h3>
+                        <p>Born and raised in Amritsar with deep knowledge of Sikh history</p>
+                        <p>Male | English, German, Punjabi</p>
+                        <span class="guide-contact">Contact: +91-XXXXXXXX98</span>
+                    </div>
+                </div>
+
+                <!-- Guide 4 -->
+                <div class="guide-card">
+                    <div class="guide-img">
+                        <img
+                            src="https://png.pngtree.com/png-clipart/20250111/original/pngtree-flat-design-female-avatar-icon-with-blue-shirt-simple-and-professional-png-image_19050517.png">
+                    </div>
+                    <div class="guide-info">
+                        <h3>Neha Sharma</h3>
+                        <p>Specialist in custom tours for students and families</p>
+                        <p>Female | English, Hindi, Punjabi</p>
+                        <span class="guide-contact">Contact: +91-XXXXXXXX28</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foods Section -->
+    <section class="section foods" id="foods">
+        <div class="container">
+            <div class="section-title">
+                <h2>Famous Foods</h2>
+            </div>
+
+            <div class="foods-container">
+                <!-- Kulcha -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBas_OdaxTC-Fh7FD5-TWiJoeI80Dzg3RiQ&s">
+                    </div>
+                    <div class="food-info">
+                        <h3>Amritsari Kulcha</h3>
+                        <p>Crispy, leavened bread stuffed with spiced potatoes and baked in traditional tandoor (clay
+                            oven), slathered with generous amount of butter or ghee. It's typically served with spicy
+                            <b>chole</b> and a side of pickled onions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Makki Di Roti -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Saagroti.jpg/250px-Saagroti.jpg">
+                    </div>
+                    <div class="food-info">
+                        <h3>Makki di Roti And Sarson Da Saag </h3>
+                        <p>A special Punjabi winter dish. <i><b>Makki di Roti</b></i> is a flatbread made from cornmeal
+                            and <i><b>Sarson da Saag</b></i> is a flavourful curry made from mustard greens,often
+                            enriched with butter or ghee.</p>
+                    </div>
+                </div>
+
+                <!-- Lassi -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJl5giiE26PIj2AiDVRiVzwuqVuXVJX7MHg&s">
+                    </div>
+                    <div class="food-info">
+                        <h3> Lassi</h3>
+                        <p>A refreshing, thick, and creamy <b>yogurt-based drink</b>, often served in tall glasses with
+                            a
+                            dollop of fresh cream (malai). You can find it sweet, salty, or flavored (like kesar or peda
+                            lassi).</p>
+                    </div>
+                </div>
+
+                <!-- Chole Bhathure -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img
+                            src="https://i.ytimg.com/vi/wAv-mFU7eus/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD4QzhyIzsn3bEMvu2NXaXRKS7qgg">
+                    </div>
+                    <div class="food-info">
+                        <h3>Chole Bhathure</h3>
+                        <p>A popular breakfast or brunch option, this dish features fluffy, deep-fried <b>bhature
+                                (bread)</b> served with spicy <b></b>,pickeled onions and green chillies.</p>
+                    </div>
+                </div>
+
+                <!-- Veg Thali -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://i.pinimg.com/736x/49/ce/de/49cede7f0f2f7473045c0350eec68c56.jpg"
+                            alt="Traditional Punjabi vegetarian thali with multiple dishes">
+                    </div>
+                    <div class="food-info">
+                        <h3>Aloo Tikki Chaat</h3>
+                        <p><b>Crispy potato patties</b>(aloo tikki) are crushed and topped with a medley of
+                            <b>chutneys</b> (tamarind, mint), <b>yogurt, spices,</b> and sometimes chole (chickpea
+                            curry) and sev (crispy chickpea flour noodles).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mathi -->
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj19iGbLgbDkIlmhOnl-y745WgHvG9Hwxn6uz2paulFM50Jz06msAruEqIyy-nZHmiau8&usqp=CAU"
+                            alt="Crispy Punjabi mathi with spices">
+                    </div>
+                    <div class="food-info">
+                        <h3> Mathi Chole</h3>
+                        <p>Mathis are savory,<b>crispy,flaky biscuits</b> or crackers,often made with refined flou.The
+                            crispy mathi is typically broken into pieces and then soaked or generously topped with
+                            the<b> hot spicy chole</b>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Shopping-->
+    <section class="section shopping" id="shopping">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shopping</h2>
+            </div>
+            <div class="shopping-container">
+                <!-- punjabi jutties -->
+                <div class="shopping-card">
+                    <div class="shopping-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGUBq2b5ukoyMOAZ3eBVeOlBDz75p4st_VQQ&s"
+                            alt="Colorful collection of traditional Punjabi juttis with intricate embroidery">
+                    </div>
+                    <div class="shopping-info">
+                        <h3>Punjabi Juttis</h3>
+                        <p>Handcrafted leather shoes with intricate embroidery, available in vibrant colors and
+                            patterns. Comfortable and stylish, they make perfect souvenirs.</p>
+                        <p>
+                            <strong>Where to shop:</strong>
+                            Jutti Bazaar near Hall Bazaar
+                        </p>
+                        <p class="price">Price: ₹250-₹2000 per pair</p>
+                    </div>
+                </div>
+                <!--Phulkari Work-->
+                <div class="shopping-card">
+                    <div class="shopping-img">
+                        <img src="https://cdn.shopaccino.com/swadescreations/products/whatsapp-image-2025-01-06-at-95633-pm-6032393481290_l.jpeg?v=577"
+                            alt="Vibrant Phulkari dupatta with traditional floral embroidery patterns">
+                    </div>
+                    <div class="shopping-info">
+                        <h3>Phulkari Dupatta</h3>
+                        <p>The traditional embroidery of Punjab, featuring colorful floral patterns on shawls, suits,
+                            and home decor items.</p>
+                        <p>
+                            <strong>Where to shop:</strong>
+                            Katra Sufaid or Ghanta Ghar
+                        </p>
+                        <p class="price">Price: ₹500-₹2000 depending on size and work</p>
+                    </div>
+                </div>
+                <!--Punjabi Suits-->
+                <div class="shopping-card">
+                    <div class="shopping-img">
+                        <img src="https://5.imimg.com/data5/DI/EF/SB/ANDROID-83884004/product-jpeg-500x500.jpg"
+                            alt="Traditional Punjabi suits with intricate embroidery and vibrant colors">
+                    </div>
+                    <div class="shopping-info">
+                        <h3>Punjabi Suits</h3>
+                        <p>Traditional salwar kameez sets with contemporary designs, perfect for both casual and formal
+                            occasions.</p>
+                        <p>
+                            <strong>Where to shop:</strong>
+                            Lawrence Road and Katra Jaimal Singh markets
+                        </p>
+                        <p class="price">Price:₹500-₹4000 per suit</p>
+                    </div>
+                </div>
+                <!--Amritsari Turban-->
+                <div class="shopping-card">
+                    <div class="shopping-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuU49wJQtjiTe_JhsV8T4GcY429YGW6WvgvQ&s"
+                            alt="Traditional Amritsari pickles and papad">
+                    </div>
+
+                    <div class="shopping-info">
+                        <h3>Amritsari turban</h3>
+                        <p>AThe turban, known as Dastar or Pagri, is a mandatory article of faith for Sikh men (and
+                            optionally worn by Sikh women). It symbolizes equality, honour, spirituality, courage, and
+                            self-respect.</p>
+                        <p>
+                            <strong>Where to shop:</strong>
+                            Sardar Pagri House, Hall Bazaar, Amritsar
+                        </p>
+                        <p class="price">Price: ₹60–79 per meter </p>
+                    </div>
+                </div>
+
+                <!--Amritsari Pickles & Papad-->
+                <div class="shopping-card">
+                    <div class="shopping-img">
+                        <img src="https://cdn.shopclues.com/images1/thumbnails/109570/320/320/150688492-109570262-1600180493.jpg"
+                            alt="Traditional Amritsari pickles and papad">
+                    </div>
+
+                    <div class="shopping-info">
+                        <h3>Amritsari Pickles & Papad</h3>
+                        <p>Amritsar is famous for its tangy pickles and crispy papads. The mango and lemon pickles
+                            are particularly popular.</p>
+                        <p>
+                            <strong>Where to shop:</strong>
+                            Near Golden Temple (many small shops)
+                        </p>
+                        <p class="price">Price: ₹100-₹500 per jar</p>
+                    </div>
+                </div>
+
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <p>Welcome to Amritsar Tourism
+                        <i class="fa-solid fa-heart"></i>
+                    </p>
+                    <p> Your trusted travel companion to explore the soul of Punjab.
+                        Our mission is to guide visitors through the rich cultural heritage, iconic landmarks,
+                        mouth-watering cuisine, and vibrant markets of Amritsar.</p>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Places</a></li>
+                    <li><a href="#guides">Guides</a></li>
+                    <li><a href="#foods">Foods</a></li>
+                    <li><a href="#contact">About Us</a></li>
+                </ul>
+                <ul class="footer-links">
+
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </ul>
+
+                <div class="copyright">
+                    © 2025 Amritsar Tourism. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Place Modals -->
+    <div class="modal" id="golden-temple-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img src="https://punjabtourism.punjab.gov.in/images1/golden-temple-01.jpg">
+            </div>
+            <h3>Golden Temple (Harimandar Sahib)</h3>
+            <div class="modal-body">
+                <p>The Golden Temple, also known as Harimandar Sahib, is the most sacred shrine in Sikhism. Built in the
+                    16th century, the temple is covered in gold and surrounded by the holy Amrit Sarovar (Pool of
+                    Nectar).</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>Open from 6:00 AM to 10:00 PM daily for Darshan </li>
+                    <li>Free community kitchen (Langar) serves <b>100000+</b> people daily 24/7</li>
+                    <li>All visitors must cover their heads and remove shoes</li>
+                    <li>Stunning fireworks at night on the occasion of gurupurab</li>
+                    <li>Historical Sikh museum on site</li>
+                </ul>
+                <p>The temple complex also houses the Sikh Museum, Akal Takht (the highest temporal seat of Sikh
+                    authority), and a clock tower.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="jallianwala-bagh-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img
+                    src="https://media.assettype.com/theleaflet/import/wp-content/uploads/2021/09/120337061_gettyimages-1234943959-594x594-1.jpeg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true">
+            </div>
+            <h3>Jallianwala Bagh</h3>
+            <div class="modal-body">
+                <p>Jallianwala Bagh is a public garden in Amritsar that commemorates the massacre of peaceful protesters
+                    by British forces on April 13, 1919.</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>Martyrs' Well where many people jumped to escape shooting</li>
+                    <li>Bullet marks preserved on the walls</li>
+                    <li>Flame of Liberty memorial designed by American architect Benjamin Polk</li>
+                    <li>Museum with photographs and documents of the massacre</li>
+                    <li>Sound and Light show in the evenings narrating the history</li>
+                </ul>
+                <p>The site serves as an important reminder of India's struggle for independence. Visitors can still see
+                    the narrow entrance that was blocked by British troops, trapping the crowd inside.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="wagah-border-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img src="https://amritsardekho.com/wp-content/uploads/2018/02/wagah-border.jpg">
+            </div>
+            <h3>Wagah Border</h3>
+            <div class="modal-body">
+                <p>Wagah Border is the only road border crossing between India and Pakistan, located 32 km from
+                    Amritsar. The daily flag lowering ceremony is a major tourist attraction.</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>Ceremony held daily before sunset (arrive early)</li>
+                    <li>Patriotic songs and dance performances by spectators</li>
+                    <li>Highly synchronized marching by border security forces</li>
+                    <li>Seating capacity for about 25,000 people</li>
+                    <li>VIP seating available (reserve in advance)</li>
+                </ul>
+                <p>The ceremony represents the rivalry and cooperation between India and Pakistan. Soldiers from both
+                    countries perform an elaborate drill ending with a simultaneous lowering of both flags.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="durgiana-temple-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img
+                    src="https://media.tripinvites.com/places/amritsar/durgiana-temple/lord-durgiana-temple-amritsar-punjab-featured.jpg">
+            </div>
+            <h3>Durgiana Temple</h3>
+            <div class="modal-body">
+                <p>Durgiana Temple is a Hindu temple dedicated to Goddess Durga,its origins are traced back to the 16th
+                    century, the current structure was built in 1921, inspired by the architectural style of the Golden
+                    Temple.</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>Open from 6:00 AM to 10:00 PM daily</li>
+                    <li>Similar design to Golden Temple but with Hindu deities</li>
+                    <li>Sacred tank surrounding the temple</li>
+                    <li>Special aarti ceremonies in mornings and evenings</li>
+                    <li>Navratri festival is celebrated with great enthusiasm</li>
+                </ul>
+                <p>The temple complex also has shrines dedicated to Lakshmi and Narayan. The architecture includes
+                    marblework and intricate silver doors.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="gobindgarh-fort-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img
+                    src="https://s7ap1.scene7.com/is/image/incredibleindia/gobindgarh-fort-amritsar-punjab-3-musthead-hero?qlt=82&ts=1726661873870">
+            </div>
+            <h3>Gobindgarh Fort</h3>
+            <div class="modal-body">
+                <p>Gobindgarh Fort is a historic military fort that showcases Punjab's martial history. Built in 1760,
+                    it has been restored and opened to the public as a heritage site on 10th february 2017.</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>The fort is open from 10:00 AM to 10:00 PM daily.</li>
+                    <li>The entry fee for Indian nationals ranges from ₹180 to ₹649, while for foreign nationals, it's
+                        ₹375 to ₹1000. These prices may vary based on the specific attractions and shows included in the
+                        ticket.</li>
+                    <li>Seven museums with artifacts from Sikh and British periods</li>
+                    <li>Live cultural shows and martial arts demonstrations</li>
+                    <li>Seven museums with artifacts from Sikh and British periods</li>
+                    <li>Live cultural shows and martial arts demonstrations</li>
+                    <li>Toshakhana (Weapons Repository) with ancient Sikh arms</li>
+                    <li>Sher-e-Punjab 7D show about Maharaja Ranjit Singh</li>
+                    <li>Reconstructed bazaar with handicrafts and live performances</li>
+
+                </ul>
+                <p>The fort was once used to protect treasures, including the Kohinoor diamond. Visitors can experience
+                    light and sound shows telling Punjab's history.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="ram-tirath-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/ram-tirath-temple-amritsar-punjab-1-attr-hero?qlt=82&ts=1726662143888"
+                    alt="Ancient Ram Tirath temple ruins and sacred pond">
+            </div>
+            <h3>Ram Tirath</h3>
+            <div class="modal-body">
+                <p>Ram Tirath is an ancient temple complex believed to be the ashram of Rishi Valmiki where Sita gave
+                    birth to Luv and Kush. The site dates back to the Ramayana period.</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li>Sacred pond where Sita is said to have bathed after childbirth</li>
+                    <li>Ancient temples dedicated to Valmiki, Lakshman, and Hanuman</li>
+                    <li>Annual Ram Tirath Mela (fair) during Kartika Purnima</li>
+                    <li>Archaeological excavations have revealed pottery and coins from 2000 years ago</li>
+                    <li>Quiet, spiritual atmosphere away from city crowds</li>
+                </ul>
+                <p>The site includes a tank, temple ruins, and memorials. Devotees believe the pond's water has healing
+                    properties and take holy dips.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="ranjit-singh-museum-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-img">
+                <img
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi66LeDfuT4Qd29XZ8Nu2w0ynHgcrBleCcSZGDtvHQSvDc6JpjZWtwa21LrWuM7S3rsWbH3pcWtEFbEyXYmyYkg9xF2tZ5fK8MnovqR2KiNGFXewYGs3oHfuSQx021Yr-eajy_yRODFairo/s1600/1532181345515.jpg">
+            </div>
+            <h3>Maharaja Ranjit Singh Museum</h3>
+            <div class="modal-body">
+                <p>The Maharaja Ranjit Singh Museum is housed in the summer palace of the Sikh emperor and showcases
+                    artifacts from the Sikh Empire period (1799-1849).</p>
+                <p>Key Features:</p>
+                <ul>
+                    <li> The museum is open from 10 AM to 5 PM, Tuesday to Sunday, and is closed on Mondays.</li>
+                    <li>The entry fee of INR 40 for adults and INR 20 for children (5 years and older). Children under 5
+                        years old can enter for free, according to Holidify</li>
+                    <li>Original weapons, paintings and manuscripts from the Sikh era</li>
+                    <li>Life-size portrait of Maharaja Ranjit Singh on horseback</li>
+                    <li>Galleries covering political, military and cultural history</li>
+                    <li>Golden throne replica and miniature portraits of Sikh royalty</li>
+                    <li>Original coins and armory from the Sikh period</li>
+                </ul>
+                <p>The museum provides insight into the life of one of Punjab's greatest rulers. The palace itself is an
+                    example of Sikh architecture with beautiful frescoes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Place modals
+        const modalButtons = document.querySelectorAll('.learn-more');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.modal-close');
+
+        modalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-place') + '-modal';
+                document.getElementById(modalId).classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+
+
+    </script>
+
+
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "zZ9_FeM1-56O-iqsQO4Z6"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+</body>
+
+</html>
